@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>Player List</h1>
+<h2>of game {{name}} (appid: {{appid}})</h2>
+{% for u in users %}
+    <div class="entry">
+        <p class="entrytext"> {{u['name']}} </p>
+        <p class="metadata"> Owner Id: {{u['id']}} </p>
+        <p class="metadata"> Steam Id: {{u['steamid']}} </p>
+        <p class="metadata"> URL: {{u['url']}} </p>
+        <p class="metadata"> Total time played: {{u['time']}} </p>
+    </div>
+{% endfor %}

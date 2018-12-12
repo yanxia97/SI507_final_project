@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1> Welcome to my final project demo! </h1>
+
+<div class="entry">
+    <p class="entrytext"> The total number of players in the database is {{pnum}} </p>
+    <form action="/postuser" method="POST">
+        <p>Player Id (1-{{pnum}}): <input type="number" name="pid"/></p>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+    <p class="entrytext"> The total number of games in the database is {{gnum}} </p>
+    <form action="/postgame" method="POST">
+        <p>Game Id (1-{{gnum}}): <input type="number" name="gid"/></p>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+</div>

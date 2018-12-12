@@ -1,0 +1,21 @@
+
+Commands available:
+
+player 
+	Description: Plot a chart according to the user's preference of category
+
+	Options:
+		* privacy|timecreated|country|
+		Description: give users plot about the portions of the provided section in the database.
+
+friend
+	Description: Plot a chart according to the user's input of a player id
+
+	Options:
+		* PlayerId on the database
+		Description: You can find possible number by using number
+
+number
+	Description: list total number of players in the database now
+
+	No Option

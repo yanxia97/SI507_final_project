@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>Game list</h1>
+<h2>of {{name}}</h2>
+{% for g in games %}
+    <div class="entry">
+        <p class="entrytext"> {{g['name']}} </p>
+        <p class="metadata"> Id: {{g['id']}} </p>
+        <p class="metadata"> Appid on Steam: {{g['appid']}} </p>
+        <p class="metadata"> Total time played: {{g['time']}} </p>
+    </div>
+{% endfor %}
