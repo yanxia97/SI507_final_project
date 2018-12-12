@@ -128,10 +128,9 @@ def plot_friends(PlayerId):
     result = cur.fetchall()
     SteamId = result[0][0]
     conn.close()
-
-    get_data.add_friend_list(SteamId)
-    create_final_db.create_final_db()
-    create_final_db.populate_final_db()
+    # get_data.add_friend_list(SteamId)
+    # create_final_db.create_final_db()
+    # create_final_db.populate_final_db()
 
     conn = sqlite.connect('yanxia_507_final.sqlite')
     cur = conn.cursor()
@@ -173,11 +172,13 @@ def plot_friends(PlayerId):
             else:
                 val_lab[row[0]] = row[1]
         else:
-            val_lab["unknown"] += row[1]
+            if ("unknown" in val_lab):
+                val_lab["unknown"] += row[1]
+            else:
+                val_lab["unknown"] = row[1]
 
     conn.close()
 
-    print("success")
     for key in val_lab:
         labels.append(key)
         values.append(val_lab[key])
@@ -202,7 +203,7 @@ def get_number():
     result = cur.fetchall()
     num = result[0][0]
     conn.close()
-    print("The number of total players in the database is "+str(num))
+    # print("The number of total players in the database is "+str(num))
     return num
 
 def get_game_number():
@@ -248,7 +249,8 @@ def process_command(response):
         except:
             return False
     elif (response == "number"):
-        get_number()
+        num = get_number()
+        print("The number of total players in the database is "+str(num))
         return True
     else:
         return False

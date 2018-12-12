@@ -29,10 +29,11 @@ except:
 
 player_FNAME = 'simple_player.json'
 try:
-    player_file = open(player_FNAME, 'r')
-    player_contents = player_file.read()
-    PLAYER_DICTION = json.loads(player_contents)
-    player_file.close()
+    # player_file = open(player_FNAME, 'r')
+    # player_contents = player_file.read()
+    # PLAYER_DICTION = json.loads(player_contents)
+    # player_file.close()
+    PLAYER_DICTION = {}
 
 except:
     PLAYER_DICTION = {}
@@ -267,6 +268,6 @@ if __name__ == "__main__":
     while (i<len(PLAYER_DICTION) and len(PLAYER_DICTION)<1000):
         add_friend_list(list(PLAYER_DICTION.keys())[i])
         i += 1
-    # get_game_list(steam_id)
-    # for id in PLAYER_DICTION:
-    #     add_game_list(id)
+    get_game_list(steam_id)
+    for id in PLAYER_DICTION:
+        add_game_list(id)
